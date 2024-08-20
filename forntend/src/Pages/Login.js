@@ -1,7 +1,10 @@
-import React, { useState , useEffect} from 'react';
+import React, { useState} from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import './Login.css';
+import {useDispatch} from 'react-redux';
+import {bindActionCreators} from 'redux';
+import {ActionCreators} from '../State/index'
 
 const Login = () => {
   const [formData, setFormData] = useState({
@@ -10,6 +13,8 @@ const Login = () => {
   });
 
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const {addName, removeName} = bindActionCreators(ActionCreators, dispatch);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -27,7 +32,7 @@ const Login = () => {
       localStorage.setItem('token', response.data.token);
       localStorage.setItem('userID', response.data.user._id);
       console.log(localStorage.getItem('userID'))
-      navigate('/home');
+      navigate('/');
        
     } catch (err) {
       console.error('Error logging in');

@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import './Profile.css'; // Import the CSS file
-import Navbar from '../Layouts/Navbar';
+import './Profile.css';
 import axios from 'axios'
 
 const Profile = () => {
@@ -59,7 +58,6 @@ const Profile = () => {
         if (response.ok) {
           const data = await response.json();
           console.log(data);
-          console.log(userData.name)
           setUserData(data);
         } else {
           const errorData = await response.json();

@@ -4,7 +4,6 @@ import { Homepage } from './Components/Homepage';
 import Signup from './Pages/Signup';
 import Login from './Pages/Login';
 import Profile from './Pages/Profile';
-import Footer from './Layouts/Footer'
 import Navbar from './Layouts/Navbar';
 
 
@@ -20,7 +19,6 @@ function App() {
           <Route path="/profile" element={<Profile/>}/>
         </Routes>
       </BrowserRouter>
-      <Footer/>
     </div>
   );
 }
