@@ -1,0 +1,79 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ffffff;
+  padding: 0.5rem 2rem;
+  position: fixed;
+  width: 100%;
+  z-index: 1;
+  margin: 0%;
+  transition: box-shadow 0.3s ease;
+}
+
+.navbar-logo{
+  display: flex;
+  flex-direction: row;
+}
+
+.navbar-logo h1{
+  font-weight: 400;
+  color: #ac0da2;
+  margin: 4%;
+  margin-left: 60%;
+}
+
+.navbar-logo img {
+  height: 10vh;
+}
+
+.navbar-links {
+  display: flex;
+  gap: 1rem;
+  margin-right: 3%;
+}
+
+.navbar-links a {
+  text-decoration: none;
+  color: #ac0da2;
+  padding: 0.3rem 0.7rem;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+  font-size: medium;
+  font-weight: 500;
+  margin: 0rem 0.3rem;
+}
+
+.navbar-links a:hover {
+  background-color: #b015a6b3;
+  color: #ffffff;
+}
+
+.navbar-links .active {
+  background-color: #4b0082;
+  color: #ffffff;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .navbar-links {
+    display: none;
+  }
+
+  .navbar-logo img {
+    height: 40px;
+  }
+}
+
+.navbar-links a.login-signup {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.navbar-links a.login-signup:hover {
+  background-color: #367c39;
+}
+
+.navbar.scrolled {
+  box-shadow: #841195 0 0px 4px;
+}
