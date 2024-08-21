@@ -31,7 +31,7 @@ const Login = () => {
       console.log(response.data);
       localStorage.setItem('token', response.data.token);
       localStorage.setItem('userID', response.data.user._id);
-      console.log(localStorage.getItem('userID'))
+      addName(response.data.user.name);
       navigate('/');
        
     } catch (err) {

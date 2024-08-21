@@ -2,6 +2,9 @@ import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Profile.css';
 import axios from 'axios'
+import {useDispatch} from 'react-redux';
+import {bindActionCreators} from 'redux';
+import {ActionCreators} from '../State/index'
 
 const Profile = () => {
   const [userData, setUserData] = useState({
@@ -10,7 +13,10 @@ const Profile = () => {
     username: '',
     password: '',
   });
+
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const {addName, removeName} = bindActionCreators(ActionCreators, dispatch);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -41,6 +47,7 @@ const Profile = () => {
   const handleLogout = () => {
     console.log('Logging out');
     localStorage.removeItem('token');
+    removeName('');
     navigate('/login')
   };
 

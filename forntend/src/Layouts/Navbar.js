@@ -31,7 +31,7 @@ const Navbar = ({ scrolled }) => {
             const data = await response.json();
             console.log(data);
             setUserData(data);
-            addName(data.username);
+            addName(data.name);
           } else {
           }
         }
